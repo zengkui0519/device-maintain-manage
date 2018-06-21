@@ -1,0 +1,27 @@
+server:
+    port: 8080
+
+spring:
+    application:
+        name: @project.artifactId@
+    datasource:
+        driver-class-name: oracle.jdbc.OracleDriver
+        url: jdbc:oracle:thin:@192.168.0.240:1521:orcl
+        username: odin_itms_new
+        password: odin_itms_new
+    jackson:
+        date-format: yyyy-MM-dd HH:mm:ss
+        time-zone: GMT+8
+        default-property-inclusion: non_null
+
+swagger:
+    base-package: cn.com.bosi.itms.web
+    base-path: /**
+    exclude-path: /error
+
+beetlsql:
+#    sqlPath: /sql
+#    dev: true
+    daoSuffix: Mapper
+    basePackage: cn.com.bosi.itms.mapper
+    dbStyle: org.beetl.sql.core.db.OracleStyle
